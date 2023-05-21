@@ -4,7 +4,7 @@ const { authMiddleware } = require('./utils/auth');
 
 const path = require('path');
 const db = require('./config/connection');
-const routes = require('./routes');
+//const routes = require('./routes');
 
 
 //import our typeDefs and resolvers
@@ -21,7 +21,7 @@ const server = new ApolloServer({
 })
 
 //integrate our Apollo server with Express application as middleware
-server.applyMiddleware({app});
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -35,9 +35,13 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
+//integrate our Apollo server with Express application as middleware
+const startApolloServer = async () => {
+  await server.start();
 
+server.applyMiddleware({app});
 
-app.use(routes); //comment this out in the end
+//app.use(routes); //comment this out in the end
 
 
 db.once('open', () => {
@@ -48,7 +52,9 @@ db.once('open', () => {
 
   });
 });
-
+};
 process.on('uncaughtException', function(err) {
   console.log('Caught exception: ' + err);
 });
+
+startApolloServer();
