@@ -4,12 +4,11 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 // add these two library import statements
-import ApolloClient from '@apollo/client';
-import { ApolloProvider } from '@apollo/client';
-
+{ ApolloClient, InMemoryCache, ApolloProvider, gql } from; '@apollo/client';
 
 const client = new ApolloClient({
   // uri: 'http://localhost:3001/graphql'
+  cache: new InMemoryCache(),
   request: operation => {
     const token = localStorage.getItem('id_token');
 
