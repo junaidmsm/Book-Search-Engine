@@ -4,7 +4,7 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 // add these two library import statements
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from 'apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollot/client';
 
 const client = new ApolloClient({
   // uri: 'http://localhost:3001/graphql'
