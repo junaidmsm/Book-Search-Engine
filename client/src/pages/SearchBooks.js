@@ -63,22 +63,24 @@ const SearchBooks = () => {
 
   // create function to handle saving a book to our database
   const handleSaveBook = async (bookId) => {
+    console.log("Inside HandleSaveBook");
     // find the book in `searchedBooks` state by the matching id
     const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
 
- 
+    console.log("bookToSave = ", bookToSave);
 
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
+      console.log("token is invalid????");
       return false;
     }
 
     try {
       // const response = await saveBook(bookToSave, token);
       const {data} = await saveBook({
-        variables: { input: bookToSave }
+        variables: { bookData: { ...bookToSave} }
       });
 
       // if book successfully saves to user's account, save book id to state
