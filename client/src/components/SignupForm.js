@@ -40,9 +40,9 @@ const SignupForm = () => {
     
 
     setUserFormData({
-      username: '',
-      email: '',
-      password: '',
+      username: 'junaidmsm',
+      email: 'mjunaid@live.co.uk',
+      password: '12June2023',
     });
   };
 
