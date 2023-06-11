@@ -6,6 +6,15 @@ The Book search engine is an application using MERN stack and React front end, M
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Table of Contents
+* Deployed Application
+* Usage
+* Available-Scripts
+* Learn-More
+* License
+* Contribution
+* Questions
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -72,3 +81,28 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+## License
+
+_This application has the MIT License._
+      
+  For more information please view the [license description](https://choosealicense.com/licenses/mit/).
+  
+
+## Contribution
+
+Original code source: https://github.com/coding-boot-camp/miniature-eureka
+
+## Questions
+
+_For further questions:_
+  
+  
+  _Contact Info:_
+  GitHub: [junaidmsm](https://github.com/g)
+
+  Email: [mjunaid@live.co.uk](mailto:y)
+
+
+     
