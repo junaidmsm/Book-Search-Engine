@@ -15,6 +15,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Contribution
 * Questions
 
+## Deployed Application
+
+
+
+## Usage
+
+This application allows to search for the books, save books to your saved book list and remove books from the saved book list.
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -92,7 +101,7 @@ _This application has the MIT License._
 
 ## Contribution
 
-Original code source: https://github.com/coding-boot-camp/miniature-eureka
+Original code source: https://github.com/coding-boot-camp/solid-broccoli
 
 ## Questions
 
