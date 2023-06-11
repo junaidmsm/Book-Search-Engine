@@ -7,7 +7,7 @@ const db = require('./config/connection');
 //const routes = require('./routes');
 
 //connect to MongodDB
-const MONGODB_URI = process.env.MONGOATLAS
+const MONGODB = process.env.MONGOATLAS
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/your-database-name'); ?
 
 
