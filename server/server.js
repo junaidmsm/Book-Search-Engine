@@ -8,8 +8,7 @@ const db = require('./config/connection');
 
 //connect to MongodDB
 const MONGODB_URI = process.env.MONGOATLAS
- || "mongodb //localhost/googlebooks";
-mongoose.connect(MONGODB_URI, {useNewUrlParser: true}); 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/your-database-name'); ?
 
 
 //import our typeDefs and resolvers
