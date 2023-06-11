@@ -6,6 +6,11 @@ const path = require('path');
 const db = require('./config/connection');
 //const routes = require('./routes');
 
+//connect to MongodDB
+const MONGODB_URI = process.env.MONGOATLAS
+ || "mongodb //localhost/googlebooks";
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true}); 
+
 
 //import our typeDefs and resolvers
 const { typeDefs, resolvers } = require('./schemas');
