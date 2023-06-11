@@ -17,7 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Deployed Application
 
-[Walkthrough Video](https://"https://www.loom.com/embed/d9cb6ce3f6c043ec94a84d3c39362d34")
+[Walkthrough Video](https://https://www.loom.com/embed/d9cb6ce3f6c043ec94a84d3c39362d34)
 
 
 
