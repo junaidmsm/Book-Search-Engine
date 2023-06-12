@@ -8,7 +8,35 @@ const db = require('./config/connection');
 
 //connect to MongodDB
 const MONGODB_URI = process.env.MONGOATLAS
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/Cluster0');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/Project0');
+
+
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://dbUser:05December2022@cluster0.yduww1p.mongodb.net/?retryWrites=true&w=majority";
+
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
+
+async function run() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);
+
 
 
 //import our typeDefs and resolvers
@@ -30,14 +58,14 @@ const server = new ApolloServer({
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// if we're in production, serve client/build as static assets
-//if (process.env.NODE_ENV === 'production') {
-  //app.use(express.static(path.join(__dirname, '../client/build')));
-//}
+ //if we're in production, serve client/build as static assets
+if (process.env.NODE_ENV === 'production') {
+app.use(express.static(path.join(__dirname, '../client/build')));
+}
 
-//app.get('*', (req, res) => {
-  //res.sendFile(path.join(__dirname, '../client/build/index.html'));
-//});
+app.get('*', (req, res) => {
+res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 //integrate our Apollo server with Express application as middleware
 const startApolloServer = async () => {
