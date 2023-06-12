@@ -8,7 +8,7 @@ const db = require('./config/connection');
 
 //connect to MongodDB
 const MONGODB_URI = process.env.MONGOATLAS
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/Project0');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/Cluster0');
 
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
